@@ -18,4 +18,6 @@ public interface UserRepository extends JpaRepository<UserModel, Long>{
     //Repository para retornar um unico usuário de acordo com o login e senha
     @Query(value = "SELECT * FROM user WHERE user_registration = :registration AND use_password = :password", nativeQuery = true)
     Optional<UserModel> userFindLogin(@Param("registration") String registration, @Param("password") String password);
+
+
 }
